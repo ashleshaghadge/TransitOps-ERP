@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TransitOps Dashboard</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>TransitOps Fleet Dashboard</h1>
+
+
+
+<!-- KPI CARDS -->
+
+<div class="dashboard-container">
+
+
+
+<div class="card">
+
+<h3>Active Vehicles</h3>
+
+<h1>
+<%= data.activeVehicles %>
+</h1>
+
+<p>Currently On Trip</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Available Vehicles</h3>
+
+<h1>
+<%= data.availableVehicles %>
+</h1>
+
+<p>Ready for Dispatch</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Vehicles In Maintenance</h3>
+
+<h1>
+<%= data.maintenanceVehicles %>
+</h1>
+
+<p>Under Service</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Active Trips</h3>
+
+<h1>
+<%= data.activeTrips %>
+</h1>
+
+<p>Dispatched Trips</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Pending Trips</h3>
+
+<h1>
+<%= data.pendingTrips %>
+</h1>
+
+<p>Waiting For Dispatch</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Drivers On Duty</h3>
+
+<h1>
+<%= data.driversOnDuty %>
+</h1>
+
+<p>Currently Assigned</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Fleet Utilization</h3>
+
+
+<h1>
+
+<%= data.utilization %> %
+
+</h1>
+
+
+<p>Vehicle Usage</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+<!-- FILTER SECTION -->
+
+
+<h2>Vehicle Filters</h2>
+
+
+
+<form action="/dashboard" method="GET" class="filter-box">
+
+
+
+<label>
+Vehicle Type
+</label>
+
+
+<select name="type">
+
+
+<option value="">
+All Types
+</option>
+
+
+<option value="Van">
+Van
+</option>
+
+
+<option value="Truck">
+Truck
+</option>
+
+
+<option value="Bus">
+Bus
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Status
+</label>
+
+
+<select name="status">
+
+
+<option value="">
+All Status
+</option>
+
+
+<option value="Available">
+Available
+</option>
+
+
+<option value="On Trip">
+On Trip
+</option>
+
+
+<option value="In Shop">
+In Shop
+</option>
+
+
+<option value="Retired">
+Retired
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Region
+</label>
+
+
+<select name="region">
+
+
+<option value="">
+All Regions
+</option>
+
+
+<option value="Pune">
+Pune
+</option>
+
+
+<option value="Mumbai">
+Mumbai
+</option>
+
+
+<option value="Nashik">
+Nashik
+</option>
+
+
+</select>
+
+
+
+<button type="submit">
+Apply Filter
+</button>
+
+
+
+</form>
+
+
+
+
+
+
+
+<!-- VEHICLE TABLE -->
+
+
+<h2>Vehicle Overview</h2>
+
+
+<table border="1">
+
+
+<tr>
+
+<th>Registration Number</th>
+
+<th>Vehicle Name</th>
+
+<th>Type</th>
+
+<th>Status</th>
+
+<th>Region</th>
+
+<th>Capacity</th>
+
+
+</tr>
+
+
+
+<% vehicles.forEach(vehicle=>{ %>
+
+
+
+<tr>
+
+
+<td>
+<%= vehicle.registration_number %>
+</td>
+
+
+<td>
+<%= vehicle.vehicle_name %>
+</td>
+
+
+
+<td>
+<%= vehicle.vehicle_type %>
+</td>
+
+
+
+<td>
+<%= vehicle.status %>
+</td>
+
+
+
+<td>
+<%= vehicle.region %>
+</td>
+
+
+
+<td>
+<%= vehicle.max_load_capacity %> kg
+</td>
+
+
+
+</tr>
+
+
+
+<% }) %>
+
+
+
+</table>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h2>Quick Actions</h2>
+
+
+
+<div class="actions">
+
+
+<a href="/vehicles">
+Manage Vehicles
+</a>
+
+
+
+<a href="/vehicles/add">
+Register Vehicle
+</a>
+
+
+
+<a href="/drivers">
+Manage Drivers
+</a>
+
+
+
+<a href="/drivers/add">
+Register Driver
+</a>
+
+
+
+<a href="/trips/create">
+Create Trip
+</a>
+
+
+
+<a href="/maintenance">
+Maintenance
+</a>
+
+
+
+<a href="/reports">
+Reports
+</a>
+
+</div>
+</body>
+
+</html>

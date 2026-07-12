@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Driver Management</title>
+
+<link rel="stylesheet" href="/css/vehicle.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Driver Management</h1>
+
+
+
+<a href="/drivers/add">
++ Register Driver
+</a>
+
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>Name</th>
+
+<th>License Number</th>
+
+<th>Category</th>
+
+<th>Expiry Date</th>
+
+<th>Contact</th>
+
+<th>Safety Score</th>
+
+<th>Status</th>
+
+
+</tr>
+
+
+
+
+<% drivers.forEach(driver=>{ %>
+
+
+
+
+<tr>
+
+
+<td>
+<%= driver.name %>
+</td>
+
+
+
+<td>
+<%= driver.license_number %>
+</td>
+
+
+
+<td>
+<%= driver.license_category %>
+</td>
+
+
+
+<td>
+<%= driver.license_expiry %>
+</td>
+
+
+
+<td>
+<%= driver.contact_number %>
+</td>
+
+
+
+<td>
+<%= driver.safety_score %>
+</td>
+
+
+
+<td>
+<%= driver.status %>
+</td>
+
+
+
+</tr>
+
+
+
+
+<% }) %>
+
+
+
+
+
+</table>
+
+
+
+</body>
+
+</html>

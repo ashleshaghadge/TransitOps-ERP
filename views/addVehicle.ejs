@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Register Vehicle</title>
+
+<link rel="stylesheet" href="/css/vehicle.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Register New Vehicle</h1>
+
+
+
+<form action="/vehicles/add" method="POST">
+
+
+
+<label>
+Registration Number
+</label>
+
+<input 
+type="text"
+name="registration_number"
+placeholder="MH12AB1234"
+required>
+
+
+
+
+<label>
+Vehicle Name / Model
+</label>
+
+<input
+type="text"
+name="vehicle_name"
+placeholder="Van-05"
+required>
+
+
+
+
+<label>
+Vehicle Type
+</label>
+
+
+<select name="vehicle_type">
+
+
+<option value="Van">
+Van
+</option>
+
+
+<option value="Truck">
+Truck
+</option>
+
+
+<option value="Bus">
+Bus
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Maximum Load Capacity (kg)
+</label>
+
+
+<input
+type="number"
+name="max_load_capacity"
+placeholder="500"
+required>
+
+
+
+
+
+<label>
+Current Odometer
+</label>
+
+
+<input
+type="number"
+name="odometer"
+placeholder="10000">
+
+
+
+
+
+<label>
+Acquisition Cost
+</label>
+
+
+<input
+type="number"
+name="acquisition_cost"
+placeholder="500000"
+required>
+
+
+
+
+
+<label>
+Region
+</label>
+
+
+<select name="region">
+
+
+<option>
+Pune
+</option>
+
+
+<option>
+Mumbai
+</option>
+
+
+<option>
+Nashik
+</option>
+
+
+<option>
+Nagpur
+</option>
+
+
+</select>
+
+
+
+
+<button type="submit">
+Register Vehicle
+</button>
+
+
+
+
+</form>
+
+
+
+<a href="/vehicles">
+Back to Vehicles
+</a>
+
+
+
+</body>
+
+</html>

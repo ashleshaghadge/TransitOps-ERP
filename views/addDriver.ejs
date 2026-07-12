@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Register Driver</title>
+
+<link rel="stylesheet" href="/css/vehicle.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Register New Driver</h1>
+
+
+
+<form action="/drivers/add" method="POST">
+
+
+
+<label>
+Driver Name
+</label>
+
+<input 
+type="text"
+name="name"
+placeholder="Alex"
+required>
+
+
+
+
+<label>
+License Number
+</label>
+
+<input 
+type="text"
+name="license_number"
+placeholder="MH123456"
+required>
+
+
+
+
+<label>
+License Category
+</label>
+
+
+<select name="license_category">
+
+
+<option>
+Heavy
+</option>
+
+
+<option>
+Light
+</option>
+
+
+<option>
+Commercial
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+License Expiry Date
+</label>
+
+
+<input
+type="date"
+name="license_expiry"
+required>
+
+
+
+
+
+
+<label>
+Contact Number
+</label>
+
+
+<input
+type="number"
+name="contact_number"
+placeholder="9876543210">
+
+
+
+
+
+
+<label>
+Safety Score
+</label>
+
+
+<input
+type="number"
+name="safety_score"
+value="100">
+
+
+
+
+
+
+<button type="submit">
+
+Register Driver
+
+</button>
+
+
+
+</form>
+
+
+
+<a href="/drivers">
+View Drivers
+</a>
+
+
+
+</body>
+
+</html>
